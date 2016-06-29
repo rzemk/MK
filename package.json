@@ -38,6 +38,7 @@
     "mongoose": "^4.5.2",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
+    "react-router": "^2.5.1",
     "request": "^2.72.0",
     "winston": "^2.2.0"
   }
