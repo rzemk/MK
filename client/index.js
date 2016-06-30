@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 /* eslint-disable no-unused-vars */
+=======
+>>>>>>> 0362676459906d501ef85a587461204dc6bbea10
 import App from './components/App';
 import CreatureCreate from './components/CreatureCreate';
 import WeaponCreate from './components/WeaponCreate';
@@ -13,7 +16,11 @@ require('isomorphic-fetch');
 render(
   <Router history={browserHistory}>
     <Route path="/" component={App}>
+<<<<<<< HEAD
       <IndexRoute component={Home} />
+=======
+      <IndexRoute component={App} />
+>>>>>>> 0362676459906d501ef85a587461204dc6bbea10
       <Route path="creature" component={CreatureCreate} />
       <Route path="weapon" component={WeaponCreate} />
       <Route path="fight" component={Fight} />
