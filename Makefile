@@ -27,8 +27,4 @@ watch: all
 	@echo [watch]
 	@$(BIN)/chokidar 'client/**/*.js' 'server/**/*.js' 'test/**/*.js' -c 'make all'
 
-<<<<<<< HEAD
 all: main ready compile tests
-=======
-all: main ready compile lint tests
->>>>>>> 0362676459906d501ef85a587461204dc6bbea10
