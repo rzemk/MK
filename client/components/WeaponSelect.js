@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle, jsx-quotes */
 import React from 'react';
 
 class WeaponSelect extends React.Component {
@@ -22,7 +23,7 @@ class WeaponSelect extends React.Component {
         <h1>Choose your weapon</h1>
         <div>
           <label>Weapon</label>
-          <select ref='weapon'>
+          <select ref='weaponId'>
             {this.state.weapons.map((t, i) => <option key={i} value={t._id} >{t.name}</option>)}
           </select>
         </div>

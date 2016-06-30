@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import App from './components/App';
 import CreatureCreate from './components/CreatureCreate';
 import WeaponCreate from './components/WeaponCreate';
@@ -12,7 +13,7 @@ require('isomorphic-fetch');
 render(
   <Router history={browserHistory}>
     <Route path="/" component={App}>
-      <IndexRoute component={App} />
+      <IndexRoute component={Home} />
       <Route path="creature" component={CreatureCreate} />
       <Route path="weapon" component={WeaponCreate} />
       <Route path="fight" component={Fight} />

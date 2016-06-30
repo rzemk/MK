@@ -1,3 +1,4 @@
+/* eslint-disable max-len, quotes, arrow-body-style */
 import React from 'react';
 
 class CreatureCreate extends React.Component {
@@ -10,7 +11,7 @@ class CreatureCreate extends React.Component {
     const attack = this.refs.attack.value;
     const name = this.refs.name.value;
     const image = this.refs.image.value;
-    fetch('//localhost:3333/weapon/new', { method: 'post', body: JSON.stringify({ attack, name, image }), headers: {"Content-Type": "application/json"} })
+    fetch('//localhost:3333/weapon/new', { method: 'post', body: JSON.stringify({ attack, name, image }), headers: { "Content-Type": "application/json" } })
     .then((r) => { return r.json(); })
     .then((data) => {
       const sections = data.sections;

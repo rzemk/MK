@@ -1,4 +1,4 @@
-/* eslint-disable jsx-quotes */
+/* eslint-disable jsx-quotes, no-underscore-dangle */
 import React from 'react';
 
 class CreatureSelect extends React.Component {
@@ -27,9 +27,6 @@ class CreatureSelect extends React.Component {
           <select ref='fighterId' >
             {this.state.fighters.map((t, i) => <option key={i} value={t._id} >{t.name}</option>)}
           </select>
-        </div>
-        <div>
-          <button onClick={this.props.choose} >Choose</button>
         </div>
       </div>
     );

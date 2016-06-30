@@ -5,7 +5,7 @@ export default class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>my new app page</h1>
+        <h1>New Fighting Game!</h1>
         <ul>
           <li><Link to="/">Home</Link></li>
           <li><Link to="/creature">New Fighter</Link></li>
