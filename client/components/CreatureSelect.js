@@ -1,21 +1,11 @@
-/* eslint-disable jsx-quotes, no-underscore-dangle */
+/* eslint-disable jsx-quotes, no-underscore-dangle, max-len, react/prop-types */
 import React from 'react';
 
 class CreatureSelect extends React.Component {
 // export default () => {
   constructor(props) {
     super(props);
-    console.log('props: ', props);
-    this.state = { fighters: [] };
-  }
-
-  componentDidMount() {
-    fetch('//localhost:3333/creature/all')
-    .then(r => r.json())
-    .then(j => {
-      console.log(j);
-      this.setState({ fighters: j.creatures });
-    });
+    this.state = { fighters: [], next: props.next };
   }
 
   render() {
@@ -23,13 +13,19 @@ class CreatureSelect extends React.Component {
       <div>
         <h1>Choose your fighter</h1>
         <div>
-          <label>Fighter</label>
-          <select ref='fighterId' >
-            {this.state.fighters.map((t, i) => <option key={i} value={t._id} >{t.name}</option>)}
-          </select>
+          <button onClick={this.props.prev} >Prev</button><button onClick={this.state.next}>Next</button>
+          <div>
+            <img role="presentation" height='150px' src={this.props.fighter.image} />
+          </div>
         </div>
         <div>
-          <button onClick={this.props.choose} >Choose</button>
+          Name: {this.props.fighter.name}
+        </div>
+        <div>
+          Health: {this.props.fighter.health}
+        </div>
+        <div>
+          Record: Wins:{this.props.fighter.win} Losses:{this.props.fighter.loss}
         </div>
       </div>
     );
@@ -37,3 +33,4 @@ class CreatureSelect extends React.Component {
 }
 
 export default CreatureSelect;
+// {this.state.fighters.map((t, i) => <img key={i} role="presentation" height='150px' src={t.image} />)}

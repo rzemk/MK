@@ -3,13 +3,13 @@
 import React from 'react';
 
 export default (props) => {
-  let health = Math.round(props.health);
-  if (props.health < 0) {
+  let health = Math.round(props.fighter.health);
+  if (props.fighter.health < 0) {
     health = 0;
   }
-  const damageWidth = `${((props.maxHealth - health) / props.maxHealth) * 100}px`;
-  const healthWidth = `${(health / props.maxHealth) * 100}px`;
-  const width = `${(health / props.maxHealth) * 100}px`;
+  const damageTaken = ((props.maxHealth - health) / props.maxHealth) * 100;
+  const damageWidth = `${damageTaken}px`;
+  const healthWidth = `${100 - damageTaken}px`;
   return (
     <div>
       <div style={{ width: healthWidth, height: '40px' }} className='remaining' ></div>
@@ -18,19 +18,19 @@ export default (props) => {
         Health: {health}
       </div>
       <div>
-        <img height='150px' src={props.image} ></img>
+        <img height='150px' src={props.fighter.image} role="presentation" ></img>
       </div>
       <div>
-        Weapon: <img height='150px' src={props.weaponImage} ></img>
+        Weapon: <img height='150px' role="presentation" src={props.weapon.image} ></img>
       </div>
       <div>
-        Name: {props.name}
+        Name: {props.fighter.name}
       </div>
       <div>
-        Weapon: {props.weapon}
+        Weapon: {props.weapon.name}
       </div>
       <div>
-        Record: Wins:{props.win} Losses:{props.loss}
+        Record: Wins:{props.fighter.win} Losses:{props.fighter.loss}
       </div>
     </div>
   );

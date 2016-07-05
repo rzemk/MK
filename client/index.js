@@ -13,7 +13,7 @@ require('isomorphic-fetch');
 render(
   <Router history={browserHistory}>
     <Route path="/" component={App}>
-      <IndexRoute component={App} />
+      <IndexRoute component={Home} />
       <Route path="creature" component={CreatureCreate} />
       <Route path="weapon" component={WeaponCreate} />
       <Route path="fight" component={Fight} />

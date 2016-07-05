@@ -1,4 +1,11 @@
 
 import React from 'react';
 
-export default () => <h1>Home</h1>;
+export default () => {
+  return (
+    <div>
+      <h1>New Fighting Game!</h1>
+      <h2>Choose your fighter.  Face your opponent. Fight!</h2>
+    </div>
+  );
+};

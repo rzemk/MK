@@ -1,4 +1,4 @@
-/* eslint-disable no-underscore-dangle, jsx-quotes */
+/* eslint-disable no-underscore-dangle, jsx-quotes, react/prop-types, max-len */
 import React from 'react';
 
 class WeaponSelect extends React.Component {
@@ -8,24 +8,21 @@ class WeaponSelect extends React.Component {
     this.state = { weapons: [] };
   }
 
-  componentDidMount() {
-    fetch('//localhost:3333/weapon/all')
-    .then(r => r.json())
-    .then(j => {
-      console.log(j);
-      this.setState({ weapons: j.weapons });
-    });
-  }
-
   render() {
     return (
       <div>
         <h1>Choose your weapon</h1>
         <div>
-          <label>Weapon</label>
-          <select ref='weaponId'>
-            {this.state.weapons.map((t, i) => <option key={i} value={t._id} >{t.name}</option>)}
-          </select>
+          <button onClick={this.props.prev} >Prev</button><button onClick={this.props.next}>Next</button>
+          <div>
+            <img role="presentation" height='150px' src={this.props.weapon.image} />
+          </div>
+        </div>
+        <div>
+          Name: {this.props.weapon.name}
+        </div>
+        <div>
+          Attack: {this.props.weapon.attack}
         </div>
       </div>
     );
